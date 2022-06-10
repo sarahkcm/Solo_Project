@@ -1,5 +1,5 @@
-import React from "react";
-import data from "../../../data.js";
+import React, { useEffect, useState } from "react";
+import axios from 'axios'
 import AddCardOutlinedIcon from "@mui/icons-material/AddCardOutlined";
 import "./Products.css";
 import { Link } from "react-router-dom";
@@ -18,11 +18,22 @@ const Products = () => {
       {title}
     </p>
   );
+
+  const [pro, setPro]= useState([]);
+  useEffect(()=>{
+    const getData = async () =>{
+      const result = await axios.get('/api/weed-choco/products')
+      setPro(result.data)
+      console.log(result);
+    }
+    getData();
+  })
+
   return (
     <div>
       <h1>Products:</h1>
       <div className='Products'>
-        {data.pro.map((product, i) => (
+        {pro.map((product, i) => (
           <div className='Product' key={i}>
             <Link to={`/product/${product.Link}`}>
               <img src={product.image} alt={product.Title} />
