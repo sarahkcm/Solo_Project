@@ -1,0 +1,20 @@
+.Products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Product{
+    border: 1px rgb(4, 104, 59) solid;
+    margin: 1rem;
+}
+
+.Product img{
+    width: 100%;
+    max-width: 400px;
+}
+
+.Detail{
+    padding: 1rem;
+}
+
