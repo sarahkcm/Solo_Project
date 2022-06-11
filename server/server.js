@@ -5,10 +5,14 @@ import cors from "cors";
 
 const app = express();
 app.use(express.json())
-app.use(cors())
 
 app.get('/api/weed-choco/products',(req,res)=>{
     res.send(data.pro)
+})
+
+app.get('/api/weed-choco/products/onlyOne/:Link',(req,res)=>{
+    const pro = data.pro.find(x=>x.Link === req.params.Link)
+    pro ? res.send(pro) : res.status(404).send({error:'Product not found'})
 })
 
 const Port = 5005;

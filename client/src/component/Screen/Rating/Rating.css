@@ -1,0 +1,9 @@
+.rating span {
+    color:rgb(63, 224, 170)
+}
+
+#Views {
+    text-decoration: none;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
