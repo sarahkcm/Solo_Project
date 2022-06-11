@@ -1,14 +1,15 @@
 import * as React from 'react';
+import { useStateContext } from "../../StateContext";
 import { styled, alpha } from '@mui/material/styles';
-import {AppBar,Box,Toolbar,IconButton,Typography,InputBase,Badge,MenuItem,Menu} from '@mui/material/';
+import {AppBar,Box,Toolbar,IconButton,Typography,InputBase,Badge,MenuItem,Menu,Button} from '@mui/material/';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import {Link} from 'react-router-dom';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
+import {Link, Navigate, NavLink} from 'react-router-dom';
+import Cart from '../Cart/Cart';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -74,6 +75,12 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const { viewCart, setViewCart,totalQ,qt, } = useStateContext();
+  console.log(viewCart);
+  const openCart=()=>{
+    setViewCart(true)
+  }
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -116,7 +123,7 @@ export default function PrimarySearchAppBar() {
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
-            <MailIcon />
+            <ShoppingCartTwoToneIcon     />
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -170,13 +177,15 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-            <Link to='/cart'>
-              <Badge badgeContent={4} color="error">
-                <ShoppingCartTwoToneIcon />
+            <IconButton size="large" color="inherit" onClick={openCart}>
+            <Link to="/cart">
+              <Badge badgeContent={qt} color="error">    
+                <ShoppingCartTwoToneIcon />     
               </Badge>
               </Link>
+            {viewCart && <Cart/>}
             </IconButton>
+
             <IconButton
               size="large"
               aria-label="show 17 new notifications"

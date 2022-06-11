@@ -1,6 +1,7 @@
 const data = {
   pro: [
     // {
+      // _id: 1,
     //   Title: "Chebba Chews CARAMEL",
     //   Link:"Chebba-Chews-CARAMEL",
     //   category: "TAFFY",
@@ -17,6 +18,7 @@ const data = {
     //     "Full spectrum hemp derived CBD infused caramel. Approximately 25mg cannabidiol per chew. Organically cultivated, USA grown hemp extract. Just 12 calories per serving",
     // },
     // {
+            // _id: 2,
     //   Title: "STRAWBERRY HEMP TAFFY",
     //   Link:"STRAWBERRY-HEMP-TAFFY",
     //   category: "TAFFY",
@@ -33,6 +35,7 @@ const data = {
     //     "Full spectrum hemp derived CBD infused strawberry taffy. Organically cultivated, USA grown hemp extract Approx. 25mg cannabidiol per chew. Just 11 calories per serving",
     // },
     {
+       _id: 3,
       Title: "Realxing Mints Peppermint",
       Link:"Realxing-Mints-Peppermint",
       category: "MINTS",
@@ -48,6 +51,7 @@ const data = {
         "Dixie’s Peppermint Relaxing Mints deliver 5mg of Extracted THC that will ease you into a peaceful state of zen. Each mint contains ingredients such as peppermint oil, lemon balm, and passion flower that support a soothing and relaxing effect.",
     },
     {
+      _id:4,
       Title: "Bursts Pulled Taffy",
       Link:"Bursts-Pulled-Taffy",
       category: "Hybrid",
@@ -62,6 +66,7 @@ const data = {
         "Dixie Bursts are an assorted pack of three fruity flavors that are sure to make any situation shine a little brighter. The mango, blue raspberry and strawberry taffies are bursting with flavor and are the ultimate discreet dosing edible. Individually wrapped, you can take them anywhere your adventure takes you. ",
     },
     {
+      _id: 5,
       Title: "Bursts Pulled Taffy",
       Link:"Bursts-Pulled-Taffy",
       category: "Indica",
@@ -76,6 +81,7 @@ const data = {
         "Dixie Bursts are an assorted pack of three fruity flavors that are sure to make any situation shine a little brighter. The mango, blue raspberry and strawberry taffies are bursting with flavor and are the ultimate discreet dosing edible. Individually wrapped, you can take them anywhere your adventure takes you.",
     },
     {
+      _id: 6,
       Title: "Bursts Pulled Taffy",
       Link:"Bursts-Pulled-Taffy",
       category: "Staiva",
