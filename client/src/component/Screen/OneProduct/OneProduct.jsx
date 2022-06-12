@@ -24,6 +24,7 @@ const OneProduct = () => {
       setOneProduct(result.data);
     };
     getData();
+    
   }, [Link]);
 
   return (

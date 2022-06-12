@@ -10,6 +10,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 import {Link, Navigate, NavLink} from 'react-router-dom';
 import Cart from '../Cart/Cart';
+import  "./Navbar.css"
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -51,7 +52,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar({children}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -177,13 +178,13 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" color="inherit" onClick={openCart}>
+            <IconButton className="cart-icon" size="large" color="inherit" onClick={openCart}>
             <Link to="/cart">
               <Badge badgeContent={qt} color="error">    
                 <ShoppingCartTwoToneIcon />     
               </Badge>
               </Link>
-            {viewCart && <Cart/>}
+            {viewCart && <Cart />}
             </IconButton>
 
             <IconButton

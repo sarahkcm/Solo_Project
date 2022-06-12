@@ -1,0 +1,9 @@
+.cart-icon{
+    font-size: 25px;
+    color: gray;
+    cursor: pointer;
+    position: relative;
+    transition: transform .4s ease;
+    border: none;
+    background-color: transparent;
+  }

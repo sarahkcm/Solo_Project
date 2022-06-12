@@ -48,7 +48,7 @@ export function StateContext({children}) {
   
     const handleCartItemQ = (id, value) => {
       productF = cartItems.find((item) => item._id === id)
-      key = cartItems.findkey((product) => product._id === id);
+      key = cartItems.findKey((product) => product._id === id);
       const newCartItems = cartItems.filter((item) => item._id !== id)
   
       if(value === 'inc') {

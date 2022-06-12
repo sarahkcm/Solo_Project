@@ -265,7 +265,7 @@ text-align: end;
   font-size: 14px;
   font-weight: 300;
 }
-.cart-wrapper{
+.cw{
   width: 100vw;
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -276,7 +276,7 @@ text-align: end;
   transition: all 1s ease-in-out;
 
 }
-.cart-container{
+.cc{
   height: 100vh;
   width: 600px;
   background-color: white;
@@ -304,7 +304,7 @@ text-align: end;
   display: flex;
   gap: 10px;
 }
- .cart-heading{
+ .ch{
   display: flex;
   align-items: center;
   font-size: 18px;
@@ -316,10 +316,10 @@ text-align: end;
   background-color: transparent;
 }
 
-.cart-heading .heading{
+.ch .h{
   margin-left: 10px;
 }
-.cart-num-items{
+.cnbrI{
   margin-left: 10px;
   color: #f02d34;
 }
@@ -532,15 +532,15 @@ padding: 6px;
   padding: 6px 12px;
   cursor: pointer;
 }
-.quantity-desc .minus{
+.quantity-desc .dec{
   border-right: 1px solid gray;
   color: #f02d34;
 }
-.quantity-desc .num{
+.quantity-desc .nbr{
   border-right: 1px solid gray;
   font-size: 20px;
 }
-.quantity-desc .plus{
+.quantity-desc .inc{
   color: rgb(49, 168, 49);
 
 }
@@ -682,11 +682,11 @@ margin-top: 160px;
     width: 350px;
     height: 350px;
   }
-  .cart-container{
+  .cc{
     width: 415px;
   padding: 4px;
   }
-  .cart-heading{
+  .ch{
     margin-top: 35px;
   }
   .product-container{
@@ -759,5 +759,8 @@ margin-top: 160px;
 .btn-container{
   width: 300px;
   margin: auto;
+}
+.img-cart{
+    height: 80px;
 }
 }
