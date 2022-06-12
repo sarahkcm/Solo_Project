@@ -17,7 +17,7 @@ const Gallery = () => {
         <img width="100%" src={require('../../images/Cheebba THCV2.png')} alt=''/>
       </Carousel.Item>
       <Carousel.Item>
-        <img width="100%" src={require('../../images/Cheebba Caramelpng.png')} alt='' />
+        <img width="100%" src={require('../../images/Cheebba Caramel.png')} alt='' />
       </Carousel.Item>
       <Carousel.Item>
       <img width="100%" src={require('../../images/Cheebba Caramel 2.png')} alt=''/>

@@ -60,8 +60,8 @@ const Cart = () => {
             {cartItems.map((item) => (
               <div className='product' key={item._id}>
                 <img
-                  src={item.imagePUB}
-                  alt={item.image}
+                  src={item.ImagePUB}
+                  alt={item.Image}
                   className='cart-product-image'
                 ></img>
                 {""}
@@ -69,8 +69,8 @@ const Cart = () => {
 
                 <div className='item-desc'>
                   <div className='flex top'>
-                    <h5>{item.name}</h5>
-                    <h4>TND {item.price}</h4>
+                    <h5>{item.Title}</h5>
+                    <h4>TND {item.Price}</h4>
                   </div>
                   <div className='flex bottom'>
                     <div>
@@ -82,7 +82,7 @@ const Cart = () => {
                           <RemoveCircleOutlineIcon />
                         </span>
                         <span className='nbr' onClick=''>
-                          {item.quantity}
+                          {item.CInStock}
                         </span>
                         <span
                           className='inc'
@@ -103,9 +103,20 @@ const Cart = () => {
                 </div>
               </div>
             ))}
-          </div>
-          
-        )}
+          </div>)}
+        {cartItems.length >= 1 && (
+            <div className="cart-bottom">
+              <div className="total">
+                <h3>Total:</h3>
+                <h3>TND {totalPrice}</h3>
+              </div>
+              <div className="btn-container">
+                <button type="button" className="btn" >
+                  SHOP NOW
+                </button>
+              </div>
+            </div>
+          )}
       </div>
     </div>
   );

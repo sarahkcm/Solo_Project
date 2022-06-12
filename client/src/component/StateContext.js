@@ -4,6 +4,7 @@ import {toast} from 'react-hot-toast'
 const Context = createContext();
 
 export function StateContext({children}) {
+    const [pro, setPro] = useState([]);
     const [viewCart, setViewCart] = useState(false);
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState();
@@ -90,7 +91,9 @@ export function StateContext({children}) {
             setCartItems,
             setTotalQ,
             setTotalPrice,
-            setViewCart
+            setViewCart,
+            pro,
+            setPro,
 
         }}>
             {children}

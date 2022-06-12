@@ -28,12 +28,13 @@ const OneProduct = () => {
   }, [Link]);
 
   return (
-    <div>
+      <div>
+        {console.log(OneProduct, "one")}
       <Row>
-        <Col md={6}>
+        <Col md={8}>
           <img
             className='img-large'
-            src={OneProduct.imagePUB || OneProduct.image}
+            src={OneProduct.ImageP || OneProduct.Image}
             alt={OneProduct.Title}
           ></img>
         </Col>
@@ -41,10 +42,10 @@ const OneProduct = () => {
           <ListGroup>
             <ListGroup.Item variant='flush'>
               <h1>{OneProduct.Title}</h1>
-              <h2>{OneProduct.brand}</h2>
+              <h2>{OneProduct.Brand}</h2>
             </ListGroup.Item>
             <ListGroup.Item>
-              <Rating rate={OneProduct.rate} view={OneProduct.nbrView} />
+              <Rating rate={OneProduct.Rate} view={OneProduct.NbrView} />
             </ListGroup.Item>
             <ListGroup.Item>
               <strong>Price: TND </strong>
@@ -73,7 +74,7 @@ const OneProduct = () => {
                     <br />
                     <Col>
                       {" "}
-                      {OneProduct.countInStock > 0 ? (
+                      {OneProduct.CInStock > 0 ? (
                         <div
                           style={{
                             display: "flex",
@@ -86,7 +87,7 @@ const OneProduct = () => {
                           </Button>
                           <Badge
                             color='secondary'
-                            badgeContent={OneProduct.countInStock - qt}
+                            badgeContent={OneProduct.CInStock - qt}
                           >
                             <Badge color='secondary' badgeContent={qt}>
                               <Inventory2TwoToneIcon display='inline-block' />
@@ -101,7 +102,7 @@ const OneProduct = () => {
                         <div>
                           <Badge
                             color='secondary'
-                            badgeContent={OneProduct.countInStock}
+                            badgeContent={OneProduct.CInStock}
                             showZero
                           >
                             <Inventory2TwoToneIcon />
@@ -110,10 +111,10 @@ const OneProduct = () => {
                         </div>
                       )}
                     </Col>
-                    {console.log(OneProduct.countInStock, "count")}
+                    {console.log(OneProduct.CInStock, "count")}
                   </Row>
                 </ListGroup.Item>
-                {OneProduct.countInStock > 0 && (
+                {OneProduct.CInStock > 0 && (
                   <ListGroup.Item>
                     <div className='d-grid'>
                       <Button onClick={()=>Add(OneProduct,qt)}>

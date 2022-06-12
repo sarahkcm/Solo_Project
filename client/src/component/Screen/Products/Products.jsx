@@ -23,11 +23,10 @@ const Products = () => {
     </p>
   );
 
-  const [pro, setPro] = useState([]);
-  const {Add, qt} = useStateContext();
+  const {Add, qt ,pro, setPro} = useStateContext();
   useEffect(() => {
     const getData = async () => {
-      const result = await axios.get("/api/weed-choco/products");
+      const result = await axios.get("/api/weed-choco/products/");
       setPro(result.data);
     };
     getData();
@@ -35,6 +34,7 @@ const Products = () => {
 
   return (
     <div>
+      {console.log(pro)}
       <h1>Products:</h1>
       <Row>
         <div className='Products'>
@@ -44,7 +44,7 @@ const Products = () => {
                 <div className='Product'>
                   <Link to={`/product/${product.Link}`}>
                     <img
-                      src={product.image}
+                      src={product.Image}
                       className='card-img-top'
                       alt={product.Title}
                     ></img>
@@ -52,7 +52,7 @@ const Products = () => {
                   <Card.Body>
                     <Link to={`/product/${product.Link}`}>
                       <Card.Title>{product.Title}</Card.Title>
-                      <Rating rate={product.rate} view={product.nbrView} />
+                      <Rating rate={product.Rate} view={product.NbrView} />
                     </Link>
                     <Card.Text>
                       <strong>TND {product.Price}</strong>

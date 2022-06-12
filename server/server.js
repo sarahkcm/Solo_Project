@@ -1,19 +1,26 @@
 import express from "express";
-import data from './data.js'
+import data from './data.js';
 import cors from "cors";
+import mongoose from "mongoose";
+import chocoRoutes from "./routes/Product.js";
+import path from 'path';
 
+
+
+mongoose.connect("mongodb://localhost:27017/weed-choco",{ useNewUrlParser: true }).then(()=>{
+    console.log("db successfully connected");
+}).catch((err)=>{
+    console.log(err, " Failed to connect db");
+})
 
 const app = express();
+const __dirname = path.resolve()
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
+app.use(cors())
 
-app.get('/api/weed-choco/products',(req,res)=>{
-    res.send(data.pro)
-})
+app.use('/api/weed-choco/products',chocoRoutes)
 
-app.get('/api/weed-choco/products/onlyOne/:Link',(req,res)=>{
-    const pro = data.pro.find(x=>x.Link === req.params.Link)
-    pro ? res.send(pro) : res.status(404).send({error:'Product not found'})
-})
 
 const Port = 5005;
 app.listen(Port,()=>{
