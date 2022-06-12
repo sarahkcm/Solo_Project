@@ -1,4 +1,5 @@
 import Product from "../models/Product.js";
+import dotenv from "config"
 import data from "../data.js";
 
 export const insertChoco= async(req,res)=>{

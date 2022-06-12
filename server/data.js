@@ -1,4 +1,18 @@
 const data = {
+  users:[
+    {
+    name:"Sarahkcm",
+    email: "sarahkcm@weed-choco.com",
+    password: "BordelHello123410142",
+    admin:true
+  },
+    {
+      name:"MehdiEnnabli",
+      email: "MehdiEnnabli@gmail.com",
+      password: "Star12324104",
+      admin:false
+    }
+  ],
   pro: [
     {
     

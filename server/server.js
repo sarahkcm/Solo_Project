@@ -3,8 +3,8 @@ import data from './data.js';
 import cors from "cors";
 import mongoose from "mongoose";
 import chocoRoutes from "./routes/Product.js";
+import userRoutes from "./routes/User.js"
 import path from 'path';
-
 
 
 mongoose.connect("mongodb://localhost:27017/weed-choco",{ useNewUrlParser: true }).then(()=>{
@@ -20,6 +20,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/api/weed-choco/products',chocoRoutes)
+app.use('/api/weed-choco/',userRoutes)
 
 
 const Port = 5005;
