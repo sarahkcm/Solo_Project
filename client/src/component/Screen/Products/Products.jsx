@@ -41,11 +41,11 @@ const Products = () => {
           {pro.map((product, i) => (
             <Col sm={7} md={4} lg={3} className='mb-3' key={i}>
               <Card>
-                <div className='Product'>
+                <div className='product-card'>
                   <Link to={`/product/${product.Link}`}>
                     <img
                       src={product.Image}
-                      className='card-img-top'
+                      className='product-image'
                       alt={product.Title}
                     ></img>
                   </Link>
@@ -54,11 +54,11 @@ const Products = () => {
                       <Card.Title>{product.Title}</Card.Title>
                       <Rating rate={product.Rate} view={product.NbrView} />
                     </Link>
-                    <Card.Text>
+                    <Card.Text className="product-price">
                       <strong>TND {product.Price}</strong>
                     </Card.Text>
                   </Card.Body>
-                  <AddCardOutlinedIcon sx={{ "&:hover": { color: "green" } }} />
+                  <AddCardOutlinedIcon sx={{ "&:hover": { color: "green" } }} onClick={()=>Add(product,qt)} />
                   <Button size="small" sx={{ "&:hover": { color: "green" } }} onClick={()=>Add(product,qt)}><MyTitle title={"Add to cart"} /></Button>
                 </div>
               </Card>

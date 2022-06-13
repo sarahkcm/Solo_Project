@@ -15,7 +15,7 @@ const OneProduct = () => {
   const param = useParams();
   const { Link } = param;
   const [OneProduct, setOneProduct] = useState([]);
-  const { qt, plusQt, deQt,Add } = useStateContext();
+  const { Add, qt, setQt, plusQt, deQt } = useStateContext();
   useEffect(() => {
     const getData = async () => {
       const result = await axios.get(
@@ -24,13 +24,23 @@ const OneProduct = () => {
       setOneProduct(result.data);
     };
     getData();
+    // deQt();
+    plusQt();
     
   }, [Link]);
+
+
+
+// const deQt = () =>{
+//     setQt((prevQt)=> {
+//         if(prevQt -1<1                                                                                                              )return 1
+//       return  prevQt -1})
+// }
 
   return (
       <div>
         {console.log(OneProduct, "one")}
-      <Row>
+      <Row >
         <Col md={8}>
           <img
             className='img-large'
@@ -74,6 +84,7 @@ const OneProduct = () => {
                     <br />
                     <Col>
                       {" "}
+                      <dv>
                       {OneProduct.CInStock > 0 ? (
                         <div
                           style={{
@@ -82,7 +93,7 @@ const OneProduct = () => {
                             flexWrap: "wrap",
                           }}
                         >
-                          <Button onClick={deQt}>
+                          <Button onClick={()=>deQt}>
                             <RemoveCircleOutlineIcon />
                           </Button>
                           <Badge
@@ -93,7 +104,7 @@ const OneProduct = () => {
                               <Inventory2TwoToneIcon display='inline-block' />
                             </Badge>
                             <Button>
-                              <AddCircleOutlineIcon onClick={OneProduct.countInStock>qt ? plusQt :0} />
+                              <AddCircleOutlineIcon disabled={qt === OneProduct.CInStock } onClick={()=>plusQt} />
                             </Button>
                           </Badge>{" "}
                           {"\u00A0"} In Stock
@@ -110,6 +121,7 @@ const OneProduct = () => {
                           {"\u00A0"} Out of Stock
                         </div>
                       )}
+                      </dv>
                     </Col>
                     {console.log(OneProduct.CInStock, "count")}
                   </Row>

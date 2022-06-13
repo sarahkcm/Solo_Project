@@ -120,10 +120,10 @@ width: 100%;
 }
 
 .product-name{
-  font-weight: 500;
+  font-weight: 400;
 }
 .product-price{
-  font-weight: 800;
+  font-weight: 400;
   margin-top: 6px;
   color: black;
 }
@@ -321,7 +321,7 @@ text-align: end;
 }
 .cnbrI{
   margin-left: 10px;
-  color: #f02d34;
+  color: #14dc46;
 }
 .empty-cart{
   margin:40px;
@@ -354,7 +354,7 @@ padding: 20px 10px;
 .item-desc .flex{
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  width: 300px;
    color: #324d67;
 
 }
@@ -405,7 +405,7 @@ padding: 30px 65px;
   margin-top: 10px;
   margin-top: 40px;
   text-transform: uppercase;
-  background-color: #f02d34;
+  background-color: #165e36;
   color: #fff;
   cursor: pointer;
     transform: scale(1, 1);

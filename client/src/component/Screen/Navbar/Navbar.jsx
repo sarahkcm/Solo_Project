@@ -11,6 +11,7 @@ import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 import {Link, Navigate, NavLink} from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import  "./Navbar.css"
+import User from '../User/User.jsx';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -82,6 +83,12 @@ export default function PrimarySearchAppBar({children}) {
     setViewCart(true)
   }
 
+  const [view, setView]= React.useState(false)
+
+  const changeView=()=>{
+    setView(true);
+  }
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -99,8 +106,9 @@ export default function PrimarySearchAppBar({children}) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={changeView}>Log In</MenuItem>
+      {view ? <User/> : null}
+      <MenuItem onClick={handleMenuClose}>Sign in</MenuItem>
     </Menu>
   );
 

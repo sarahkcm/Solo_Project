@@ -7,19 +7,12 @@ import Gallery from "./component/Gallery/Gallery.jsx"
 import Navbar from "./component/Screen/Navbar/Navbar.jsx"
 import {StateContext,history } from "./component/StateContext.js";
 import Cart from "./component/Screen/Cart/Cart.jsx";
+import Footer from "./component/Screen/Footer/Footer.jsx";
 
 
 function App() {
 
-  const [view, setView] = useState('false')
-  const handleView =()=>{
-    setView(!view)
-  }
 
-function ProductRoute() {
-  const isProductRoute = useRouteMatch("/product/:Link");
-  setView(!view)
-}
   return (
     <StateContext>
     <Router>
@@ -41,6 +34,9 @@ function ProductRoute() {
           </Routes>
           
         </main>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </Router>
     </StateContext>

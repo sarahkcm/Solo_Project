@@ -5,11 +5,8 @@ import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
 import "./Cart.css";
 import { useStateContext } from "../../StateContext";
-import { Button } from "react-bootstrap";
-import { IconButton } from "@mui/material";
 
 const Cart = () => {
   const cartRef = useRef();
@@ -20,6 +17,8 @@ const Cart = () => {
     setViewCart,
     handleCartItemQ,
     Remove,
+    plusQt,
+    dQt
   } = useStateContext();
   {
     console.log(totalQt);
@@ -31,36 +30,39 @@ const Cart = () => {
   return (
     <div className='cw' ref={cartRef}>
       <div className='cc'>
+        <div>
+        <Link to='/'>
         <button
           type='button'
           className='ch'
-          onClick={() => setViewCart(false)}
-        >
+          onClick={() => setViewCart(false)}>
           <ChevronLeftIcon />
           <span className='h'>Your Cart</span>
           <span className='cnbrI'>({totalQt} items)</span>
         </button>
-
+        </Link>
+        </div>
         {cartItems.length === 0 ? (
           <div className='empty-cart'>
             <h3>Cart in empty</h3>
             <ShoppingCartTwoToneIcon />
+            <div>
             <Link to='/'>
               <button
                 type='button'
                 onClick={() => setViewCart(false)}
                 className='btn'
-              >
-                Continue Shopping
+              > Continue Shopping
               </button>
             </Link>
+          </div>
           </div>
         ) : (
           <div className='product-container'>
             {cartItems.map((item) => (
               <div className='product' key={item._id}>
                 <img
-                  src={item.ImagePUB}
+                  src={item.ImageP}
                   alt={item.Image}
                   className='cart-product-image'
                 ></img>
@@ -78,8 +80,8 @@ const Cart = () => {
                         <span
                           className='dec'
                           onClick={() => handleCartItemQ(item._id, "dec")}
-                        >
-                          <RemoveCircleOutlineIcon />
+                        ><RemoveCircleOutlineIcon />
+
                         </span>
                         <span className='nbr' onClick=''>
                           {item.CInStock}
